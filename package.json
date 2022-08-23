@@ -1,0 +1,24 @@
+{
+  "name": "astro-themes",
+  "version": "0.0.0",
+  "description": "Simple theme utility for Astro-based websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-grover/astro-themes.git"
+  },
+  "keywords": [
+    "astro",
+    "theme",
+    "dark-mode"
+  ],
+  "author": "Alex Grover <hello@alexgrover.me> (https://alexgrover.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-grover/astro-themes/issues"
+  },
+  "homepage": "https://github.com/alex-grover/astro-themes#readme"
+}
