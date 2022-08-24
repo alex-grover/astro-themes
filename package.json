@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cz": "cz",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^7.0.0"
+    "husky": "^7.0.0",
+    "is-ci": "^3.0.1"
   },
   "config": {
     "commitizen": {
@@ -34,6 +35,8 @@
     }
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
