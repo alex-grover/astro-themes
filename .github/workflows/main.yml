@@ -9,15 +9,14 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
@@ -27,3 +26,5 @@ jobs:
         run: npm run check:format
       - name: Check styles
         run: npm run check:styles
+      - name: Check commit messages
+        run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD --verbose
