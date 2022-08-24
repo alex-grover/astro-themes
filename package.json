@@ -4,6 +4,8 @@
   "description": "Simple theme utility for Astro-based websites",
   "main": "index.js",
   "scripts": {
+    "check:format": "prettier --check --cache --ignore-path .gitignore .",
+    "fix:format": "prettier --write --cache --ignore-path .gitignore .",
     "cz": "cz",
     "prepare": "is-ci || husky install"
   },
@@ -27,7 +29,9 @@
     "@commitlint/config-conventional": "^17.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^7.0.0",
-    "is-ci": "^3.0.1"
+    "is-ci": "^3.0.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.3"
   },
   "config": {
     "commitizen": {
@@ -38,5 +42,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
