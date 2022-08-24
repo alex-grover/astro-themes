@@ -28,3 +28,15 @@ jobs:
         run: npm run check:styles
       - name: Check commit messages
         run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD --verbose
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          config-file: tests/cypress.config.ts
+          build: npm run build
+          start: npm start

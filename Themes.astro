@@ -12,8 +12,9 @@ const { defaultTheme = 'light' } = Astro.props as Props
   const STORAGE_KEY = 'theme'
 
   function getThemePreference() {
-    if (window.matchMedia('(prefers-color-scheme: light)')) return 'light'
-    if (window.matchMedia('(prefers-color-scheme: dark)')) return 'dark'
+    if (window.matchMedia('(prefers-color-scheme: light)').matches)
+      return 'light'
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
     return null
   }
 
