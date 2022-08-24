@@ -1,0 +1,34 @@
+---
+import Themes from '../../../Themes.astro'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Themes Example</title>
+    <Themes />
+    <style>
+      html {
+        --background-color: white;
+        --text-color: black;
+
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      [data-theme='dark'] {
+        --background-color: black;
+        --text-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Astro Themes Example</h1>
+
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
+  </body>
+</html>

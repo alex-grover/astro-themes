@@ -11,6 +11,7 @@
     "Themes.astro"
   ],
   "scripts": {
+    "dev": "astro dev --root example",
     "check": "npm-run-all --parallel check:*",
     "check:code": "astro check",
     "check:format": "prettier --check --cache --ignore-path .gitignore .",

@@ -1,0 +1,55 @@
+---
+export type Theme = 'light' | 'dark'
+
+export interface Props {
+  defaultTheme?: Theme
+}
+
+const { defaultTheme = 'light' } = Astro.props as Props
+---
+
+<script type="module" define:vars={{ defaultTheme }}>
+  const STORAGE_KEY = 'theme'
+
+  function getThemePreference() {
+    if (window.matchMedia('(prefers-color-scheme: light)')) return 'light'
+    if (window.matchMedia('(prefers-color-scheme: dark)')) return 'dark'
+    return null
+  }
+
+  function resolveTheme(setting) {
+    const storageValue =
+      setting !== undefined ? setting : localStorage.getItem(STORAGE_KEY)
+
+    return storageValue || getThemePreference() || defaultTheme
+  }
+
+  function writeTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.style.colorScheme = theme
+  }
+
+  function handleStorageChange(e) {
+    if (e.key !== STORAGE_KEY) return
+    writeTheme(e.newValue || getThemePreference() || defaultTheme)
+  }
+
+  function setTheme(theme) {
+    localStorage.setItem(STORAGE_KEY, theme)
+    writeTheme(theme)
+  }
+
+  function getTheme() {
+    const setting = localStorage.getItem(STORAGE_KEY)
+
+    return {
+      setting,
+      theme: resolveTheme(setting),
+    }
+  }
+
+  window.getTheme = getTheme
+  window.setTheme = setTheme
+  window.addEventListener('storage', handleStorageChange)
+  writeTheme(resolveTheme())
+</script>
