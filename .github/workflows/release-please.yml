@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - main
+
 name: release-please
 jobs:
   release-please:
@@ -11,7 +12,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: test-release-please
+          package-name: astro-themes
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v3
