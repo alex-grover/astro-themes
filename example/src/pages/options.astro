@@ -9,7 +9,7 @@ import Themes from '../../../Themes.astro'
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Themes Example</title>
-    <Themes />
+    <Themes defaultTheme="dark" />
     <style>
       html {
         --background-color: white;
@@ -26,11 +26,9 @@ import Themes from '../../../Themes.astro'
     </style>
   </head>
   <body>
-    <h1>Astro Themes Example</h1>
+    <h1>Astro Themes Example w/ Options</h1>
 
-    <button onclick="setTheme('light')" data-test-id="button-light">
-      Light
-    </button>
-    <button onclick="setTheme('dark')" data-test-id="button-dark">Dark</button>
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
   </body>
 </html>
