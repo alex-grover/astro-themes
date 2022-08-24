@@ -7,16 +7,17 @@
     ".": "./index.ts"
   },
   "files": [
-    "index.ts"
+    "index.ts",
+    "Themes.astro"
   ],
   "scripts": {
     "check": "npm-run-all --parallel check:*",
     "check:code": "astro check",
     "check:format": "prettier --check --cache --ignore-path .gitignore .",
-    "check:styles": "stylelint --formatter verbose --cache --cache-location cache --ignore-path .gitignore **/*.astro",
+    "check:styles": "stylelint --formatter verbose --cache --cache-location .cache --ignore-path .gitignore **/*.astro",
     "fix": "npm-run-all --sequential fix:styles fix:format",
     "fix:format": "prettier --write --cache --ignore-path .gitignore .",
-    "fix:styles": "stylelint --formatter verbose --cache --cache-location cache --ignore-path .gitignore **/*.astro",
+    "fix:styles": "stylelint --formatter verbose --cache --cache-location .cache --ignore-path .gitignore **/*.astro",
     "cz": "cz",
     "prepare": "is-ci || husky install"
   },
