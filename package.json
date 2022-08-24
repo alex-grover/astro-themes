@@ -18,10 +18,10 @@
     "test:run": "cypress run --config-file tests/cypress.config.ts",
     "check": "npm-run-all --parallel check:*",
     "check:code": "astro check",
-    "check:format": "prettier --check --cache --ignore-path .gitignore .",
+    "check:format": "prettier --check --cache .",
     "check:styles": "stylelint --formatter verbose --cache --cache-location .cache --ignore-path .gitignore **/*.astro",
     "fix": "npm-run-all --sequential fix:styles fix:format",
-    "fix:format": "prettier --write --cache --ignore-path .gitignore .",
+    "fix:format": "prettier --write --cache .",
     "fix:styles": "stylelint --formatter verbose --cache --cache-location .cache --ignore-path .gitignore **/*.astro",
     "cz": "cz",
     "prepare": "is-ci || husky install"
