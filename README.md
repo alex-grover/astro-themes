@@ -45,7 +45,7 @@ import Themes from 'astro-themes'
 
 ### Configure
 
-Set a default theme (only applied if the user doesn't have a preference):
+Set a default theme (only applied if the browser doesn't specify a preference for dark mode):
 
 ```astro
 <Themes defaultTheme="dark" />
@@ -55,13 +55,14 @@ Set a default theme (only applied if the user doesn't have a preference):
 
 - Loads user theme preference
   - From `localStorage`, if they've set it in the past
-  - From `prefers-color-scheme`, if supported
+  - From `prefers-color-scheme: dark`, if supported
   - Falls back to the `defaultTheme` option, or `light` if not specified
 - Sets `data-theme` attribute on the `html` element, so you can implement dark mode in CSS
 - Sets `color-scheme` CSS attribute on the `html` element, so the browser renders built in elements appropriately
 - Provides utilities to get and set the theme
   - Exposes `theme.get/set()` on the `window` object, for compatibility with any framework or none at all
 - Synchronizes setting across tabs
+- Responds to changes in OS preference (for example, automatically switching to dark mode at night)
 
 ### API
 
@@ -88,7 +89,6 @@ interface exports {
 
 Pull requests, issues, or ideas are welcomed!
 
-- Allow customizing list of themes beyond `light | dark`
 - Allow customizing attribute name, or using a class (helpful for Tailwind compatibility)
 - Allow disabling CSS transitions when switching themes for consistency
 

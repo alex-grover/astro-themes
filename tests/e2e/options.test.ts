@@ -4,6 +4,7 @@ describe('<Themes /> options', () => {
       onBeforeLoad: (window) => {
         cy.stub(window, 'matchMedia').returns({
           matches: false,
+          addEventListener: () => {},
         })
       },
     })
