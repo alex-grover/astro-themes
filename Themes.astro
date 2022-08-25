@@ -35,12 +35,12 @@ const { defaultTheme = 'light' } = Astro.props as Props
     writeTheme(e.newValue || getThemePreference() || defaultTheme)
   }
 
-  function setTheme(theme) {
+  function set(theme) {
     localStorage.setItem(STORAGE_KEY, theme)
     writeTheme(theme)
   }
 
-  function getTheme() {
+  function get() {
     const setting = localStorage.getItem(STORAGE_KEY)
 
     return {
@@ -49,8 +49,11 @@ const { defaultTheme = 'light' } = Astro.props as Props
     }
   }
 
-  window.getTheme = getTheme
-  window.setTheme = setTheme
+  window.theme = {
+    get,
+    set,
+  }
+
   window.addEventListener('storage', handleStorageChange)
   writeTheme(resolveTheme())
 </script>

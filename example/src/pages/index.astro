@@ -28,9 +28,9 @@ import Themes from '../../../Themes.astro'
   <body>
     <h1>Astro Themes Example</h1>
 
-    <button onclick="setTheme('light')" data-test-id="button-light">
+    <button onclick="theme.set('light')" data-test-id="button-light">
       Light
     </button>
-    <button onclick="setTheme('dark')" data-test-id="button-dark">Dark</button>
+    <button onclick="theme.set('dark')" data-test-id="button-dark">Dark</button>
   </body>
 </html>

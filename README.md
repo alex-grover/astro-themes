@@ -37,8 +37,8 @@ import Themes from 'astro-themes'
     </style>
   </head>
   <body>
-    <button onclick="setTheme('light')">Light</button>
-    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="theme.set('light')">Light</button>
+    <button onclick="theme.set('dark')">Dark</button>
   </body>
 </html>
 ```
@@ -60,12 +60,12 @@ Set a default theme (only applied if the user doesn't have a preference):
 - Sets `data-theme` attribute on the `html` element, so you can implement dark mode in CSS
 - Sets `color-scheme` CSS attribute on the `html` element, so the browser renders built in elements appropriately
 - Provides utilities to get and set the theme
-  - Exposes `getTheme()` and `setTheme()` on the `window` object, for compatibility with any framework or none at all
+  - Exposes `theme.get/set()` on the `window` object, for compatibility with any framework or none at all
 - Synchronizes setting across tabs
 
 ### API
 
-```tsx
+```ts
 type Theme = 'light' | 'dark'
 
 interface ThemeProps {
@@ -74,11 +74,13 @@ interface ThemeProps {
 
 interface exports {
   Themes: AstroComponent<ThemeProps>
-  getTheme: () => {
-    setting: Theme | null // the user's setting, or `null` if not yet set
-    theme: Theme // the actual resolved theme in use
+  theme: {
+    get: () => {
+      setting: Theme | null // the user's setting, or `null` if not yet set
+      theme: Theme // the actual resolved theme in use
+    }
+    set: (theme: Theme) => void
   }
-  setTheme: (theme: Theme) => void
 }
 ```
 

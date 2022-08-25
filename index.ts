@@ -5,7 +5,12 @@ import { Theme } from './Themes.astro'
 
 declare global {
   interface Window {
-    getTheme: () => Theme | null
-    setTheme: (theme: Theme) => void
+    theme: {
+      get: () => {
+        setting: Theme | null
+        theme: Theme
+      }
+      set: (theme: Theme) => void
+    }
   }
 }

@@ -65,7 +65,7 @@ describe('<Themes />', () => {
 
     cy.get('[data-test-id="button-dark"]').click()
     cy.window().then((window) => {
-      expect(window.getTheme()).to.deep.equal({
+      expect(window.theme.get()).to.deep.equal({
         setting: 'dark',
         theme: 'dark',
       })

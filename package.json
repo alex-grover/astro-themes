@@ -10,7 +10,7 @@
     "Themes.astro"
   ],
   "scripts": {
-    "dev": "astro dev --root example",
+    "example": "astro dev --root example",
     "build": "astro build --root example",
     "start": "astro preview --root example",
     "test": "start-server-and-test test:server 3000 test:run",
