@@ -1,6 +1,6 @@
 {
   "name": "astro-themes",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple theme utility for Astro-based websites",
   "exports": {
     ".": "./index.ts"
