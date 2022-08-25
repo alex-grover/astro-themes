@@ -7,42 +7,59 @@ describe('<Themes />', () => {
   it('sets attribute and style on the html element', () => {
     cy.visit('/')
 
-    cy.get('[data-test-id="button-dark"]').click()
-    cy.root()
-      .should('have.attr', 'data-theme', 'dark')
-      .and('have.css', 'color-scheme', 'dark')
+    cy.window()
+      .then((window) => {
+        window.theme.set('dark')
+      })
+      .then(() => {
+        cy.root()
+          .should('have.attr', 'data-theme', 'dark')
+          .and('have.css', 'color-scheme', 'dark')
 
-    cy.get('[data-test-id="button-light"]').click()
-    cy.root()
-      .should('have.attr', 'data-theme', 'light')
-      .and('have.css', 'color-scheme', 'light')
+        return cy.window()
+      })
+      .then((window) => {
+        window.theme.set('light')
+      })
+      .then(() => {
+        cy.root()
+          .should('have.attr', 'data-theme', 'light')
+          .and('have.css', 'color-scheme', 'light')
+      })
   })
 
   it('allows users to get theme', () => {
     cy.visit('/')
 
-    cy.get('[data-test-id="button-dark"]').click()
-
-    cy.window().then((window) => {
-      expect(window.theme.get()).to.deep.equal({
-        setting: 'dark',
-        theme: 'dark',
+    cy.window()
+      .then((window) => {
+        window.theme.set('dark')
       })
-    })
+      .then((window) => {
+        expect(window.theme.get()).to.deep.equal({
+          setting: 'dark',
+          theme: 'dark',
+        })
+      })
   })
 
   it('persists on refresh', () => {
     cy.visit('/')
-    cy.get('[data-test-id="button-dark"]').click()
-    cy.root()
-      .should('have.attr', 'data-theme', 'dark')
-      .and('have.css', 'color-scheme', 'dark')
+    cy.window()
+      .then((window) => {
+        window.theme.set('dark')
+      })
+      .then(() => {
+        cy.root()
+          .should('have.attr', 'data-theme', 'dark')
+          .and('have.css', 'color-scheme', 'dark')
 
-    cy.reload()
+        cy.reload()
 
-    cy.root()
-      .should('have.attr', 'data-theme', 'dark')
-      .and('have.css', 'color-scheme', 'dark')
+        cy.root()
+          .should('have.attr', 'data-theme', 'dark')
+          .and('have.css', 'color-scheme', 'dark')
+      })
   })
 
   it('respects browser preferences', () => {
