@@ -9,7 +9,7 @@ describe('<Themes />', () => {
 
     cy.window()
       .then((window) => {
-        window.theme.set('dark')
+        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
       })
       .then(() => {
         cy.root()
@@ -19,7 +19,7 @@ describe('<Themes />', () => {
         return cy.window()
       })
       .then((window) => {
-        window.theme.set('light')
+        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))
       })
       .then(() => {
         cy.root()
@@ -33,13 +33,19 @@ describe('<Themes />', () => {
 
     cy.window()
       .then((window) => {
-        window.theme.set('dark')
+        expect(
+          window.document.documentElement.attributes.getNamedItem('data-theme')
+            .value
+        ).to.equal('light')
       })
       .then((window) => {
-        expect(window.theme.get()).to.deep.equal({
-          setting: 'dark',
-          theme: 'dark',
-        })
+        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+      })
+      .then((window) => {
+        expect(
+          window.document.documentElement.attributes.getNamedItem('data-theme')
+            .value
+        ).to.equal('dark')
       })
   })
 
@@ -47,7 +53,7 @@ describe('<Themes />', () => {
     cy.visit('/')
     cy.window()
       .then((window) => {
-        window.theme.set('dark')
+        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
       })
       .then(() => {
         cy.root()
