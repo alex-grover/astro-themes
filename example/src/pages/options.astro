@@ -27,5 +27,28 @@ import Themes from '../../../Themes.astro'
   </head>
   <body>
     <h1>Astro Themes Example w/ Options</h1>
+    <p>Default theme set to dark</p>
+
+    <div>
+      <button
+        onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))"
+      >
+        Light
+      </button>
+      <button
+        onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))"
+      >
+        Dark
+      </button>
+      <button
+        onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: null }))"
+      >
+        Clear theme
+      </button>
+    </div>
+
+    <div>
+      <a href="/">Back to basic example</a>
+    </div>
   </body>
 </html>

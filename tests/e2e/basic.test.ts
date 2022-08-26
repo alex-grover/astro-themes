@@ -7,19 +7,21 @@ describe('<Themes />', () => {
   it('sets attribute and style on the html element', () => {
     cy.visit('/')
 
-    cy.window()
-      .then((window) => {
-        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+    cy.document()
+      .then((document) => {
+        document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
       })
       .then(() => {
         cy.root()
           .should('have.attr', 'data-theme', 'dark')
           .and('have.css', 'color-scheme', 'dark')
 
-        return cy.window()
+        return cy.document()
       })
-      .then((window) => {
-        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))
+      .then((document) => {
+        document.dispatchEvent(
+          new CustomEvent('set-theme', { detail: 'light' })
+        )
       })
       .then(() => {
         cy.root()
@@ -31,29 +33,22 @@ describe('<Themes />', () => {
   it('allows users to get theme', () => {
     cy.visit('/')
 
-    cy.window()
-      .then((window) => {
-        expect(
-          window.document.documentElement.attributes.getNamedItem('data-theme')
-            .value
-        ).to.equal('light')
+    cy.root().should('have.attr', 'data-theme', 'light')
+
+    cy.document()
+      .then((document) => {
+        document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
       })
-      .then((window) => {
-        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
-      })
-      .then((window) => {
-        expect(
-          window.document.documentElement.attributes.getNamedItem('data-theme')
-            .value
-        ).to.equal('dark')
+      .then(() => {
+        cy.root().should('have.attr', 'data-theme', 'dark')
       })
   })
 
   it('persists on refresh', () => {
     cy.visit('/')
-    cy.window()
-      .then((window) => {
-        window.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+    cy.document()
+      .then((document) => {
+        document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
       })
       .then(() => {
         cy.root()

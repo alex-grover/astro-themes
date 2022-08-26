@@ -24,7 +24,7 @@ components.
 Set the theme:
 
 ```ts
-dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })) // or pass `null` to clear the saved setting
 ```
 
 Get the current theme:
@@ -42,8 +42,7 @@ Set a default theme (only applied if the browser doesn't specify a preference fo
 ## What does it do?
 
 - Provides ability to get and set the theme from any framework, or none at all
-  - Set theme by dispatching a custom browser event on the
-    window: `dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))`
+  - Set theme by dispatching a custom browser event: `document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))`
   - Get current theme: `document.documentElement.attributes.getNamedItem('data-theme').value`
 - Sets `data-theme` attribute on the `html` element, so you can implement dark mode in CSS
 - Sets `color-scheme` CSS attribute on the `html` element, so the browser renders built in elements appropriately
@@ -54,7 +53,16 @@ Set a default theme (only applied if the browser doesn't specify a preference fo
 - Synchronizes setting across tabs
 - Responds to changes in OS preference (for example, the OS automatically switching to dark mode in the evening)
 
-### Possible future enhancements
+## Run example locally
+
+```sh
+gh repo clone alex-grover/astro-themes
+cd astro-themes
+npm install
+npm run example
+```
+
+## Possible future enhancements
 
 Ideas, bug reports, or questions are welcomed! Please don't hesitate to [open an issue](https://github.com/alex-grover/astro-themes/issues/new).
 

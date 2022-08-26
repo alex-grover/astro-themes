@@ -16,6 +16,7 @@
     "test": "start-server-and-test test:server 3000 test:run",
     "test:server": "npm-run-all --sequential build start",
     "test:run": "cypress run --config-file tests/cypress.config.ts",
+    "test:open": "cypress open --config-file tests/cypress.config.ts",
     "check": "npm-run-all --parallel check:*",
     "check:code": "astro check",
     "check:format": "prettier --check --cache .",

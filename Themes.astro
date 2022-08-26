@@ -39,11 +39,16 @@ const { defaultTheme = 'light' } = Astro.props as Props
   }
 
   function handleThemeChange(event) {
-    localStorage.setItem(STORAGE_KEY, event.detail)
-    writeTheme(event.detail)
+    if (event.detail) {
+      localStorage.setItem(STORAGE_KEY, event.detail)
+      writeTheme(event.detail)
+    } else {
+      localStorage.removeItem(STORAGE_KEY)
+      writeTheme(resolveTheme(event.detail))
+    }
   }
 
-  window.addEventListener('set-theme', handleThemeChange)
+  document.addEventListener('set-theme', handleThemeChange)
   window.addEventListener('storage', handleStorageChange)
   prefersDark.addEventListener('change', handlePreferenceChange)
   writeTheme(resolveTheme())
