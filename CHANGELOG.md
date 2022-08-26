@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://github.com/alex-grover/astro-themes/compare/v0.1.0...v0.2.0) (2022-08-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* update get/set methods
+
+### Code Refactoring
+
+* use web builtins to get and set theme ([db399fe](https://github.com/alex-grover/astro-themes/commit/db399fe7a9c92455f6a36bae8298358fb4ba2292))
+
 ## [0.1.0](https://github.com/alex-grover/astro-themes/compare/v0.0.1...v0.1.0) (2022-08-25)
 
 
