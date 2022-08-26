@@ -59,6 +59,8 @@ Set a default theme (only applied if the browser doesn't specify a preference fo
 gh repo clone alex-grover/astro-themes
 cd astro-themes
 npm install
+npm link
+npm link astro-themes
 npm run example
 ```
 
@@ -67,6 +69,5 @@ npm run example
 Ideas, bug reports, or questions are welcomed! Please don't hesitate to [open an issue](https://github.com/alex-grover/astro-themes/issues/new).
 
 - Allow customizing attribute name, or using a class (helpful for Tailwind compatibility)
-- Minify script
 
 This component was inspired by the excellent [`next-themes`](https://github.com/pacocoursey/next-themes).

@@ -1,2 +1,2 @@
-export { default } from './Themes.astro'
-export * from './Themes.astro'
+export { default } from './build/Themes.astro'
+export * from './build/Themes.astro'

@@ -21,6 +21,9 @@ node_modules/
 # Astro build output
 dist/
 
+# esbuild build output
+build/
+
 # Stylelint cache
 .cache
 

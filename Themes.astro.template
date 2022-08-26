@@ -1,0 +1,9 @@
+---
+{types}
+
+const { defaultTheme = 'light' } = Astro.props as Props
+---
+
+<script type="module" define:vars={{ defaultTheme }}>
+  {snippet}
+</script>
