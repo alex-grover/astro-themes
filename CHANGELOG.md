@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/alex-grover/astro-themes/compare/v0.2.0...v0.2.1) (2022-08-26)
+
+
+### Bug Fixes
+
+* dispatch events on document, not window ([c721d72](https://github.com/alex-grover/astro-themes/commit/c721d724b31495f3499a55c8dc1a49453288855f))
+
 ## [0.2.0](https://github.com/alex-grover/astro-themes/compare/v0.1.0...v0.2.0) (2022-08-26)
 
 
