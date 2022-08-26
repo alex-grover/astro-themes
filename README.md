@@ -13,43 +13,7 @@ npm install --save-dev astro-themes
 
 Add the `<Themes />` component in your app. Works best in a centralized layout component, so it's shared everywhere.
 
-```astro
----
-import Themes from 'astro-themes'
----
-
-<html>
-  <head>
-    <Themes />
-    <style>
-      html {
-        --background-color: white;
-        --text-color: black;
-
-        color: var(--text-color);
-        background-color: var(--background-color);
-      }
-
-      [data-theme='dark'] {
-        --background-color: black;
-        --text-color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <button
-      onclick="() => dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))"
-    >
-      Light
-    </button>
-    <button
-      onclick="() => dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))"
-    >
-      Dark
-    </button>
-  </body>
-</html>
-```
+![code sample adding Themes component in document head](https://user-images.githubusercontent.com/3088615/186810936-6b00e051-c3e7-4d7e-bb1b-988290a1a8c2.png)
 
 ### Usage
 
