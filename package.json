@@ -1,7 +1,7 @@
 {
   "name": "astro-themes",
   "version": "0.1.0",
-  "description": "Simple theme utility for Astro-based websites",
+  "description": "Easy dark mode for Astro websites",
   "exports": {
     ".": "./index.ts"
   },
@@ -33,8 +33,10 @@
   "keywords": [
     "astro",
     "astro-component",
+    "css",
+    "dark-mode",
     "theme",
-    "dark-mode"
+    "ui"
   ],
   "author": "Alex Grover <hello@alexgrover.me> (https://alexgrover.me)",
   "license": "MIT",
