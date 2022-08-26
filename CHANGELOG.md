@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/alex-grover/astro-themes/compare/v0.2.1...v0.2.2) (2022-08-26)
+
+
+### Features
+
+* minify snippet ([0a9ab05](https://github.com/alex-grover/astro-themes/commit/0a9ab05ee928fd8b2ec3f69c7987e746f6ace222))
+
 ## [0.2.1](https://github.com/alex-grover/astro-themes/compare/v0.2.0...v0.2.1) (2022-08-26)
 
 
