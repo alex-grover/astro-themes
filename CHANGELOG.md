@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/alex-grover/astro-themes/compare/v0.2.2...v0.2.3) (2022-08-26)
+
+
+### Bug Fixes
+
+* **build:** run build before publishing ([6dcba83](https://github.com/alex-grover/astro-themes/commit/6dcba83715afe33202d8eee72f412c8d17055e24))
+
 ## [0.2.2](https://github.com/alex-grover/astro-themes/compare/v0.2.1...v0.2.2) (2022-08-26)
 
 
