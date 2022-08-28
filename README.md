@@ -13,7 +13,7 @@ npm install --save-dev astro-themes
 
 Add the `<Themes />` component in your app. Works best in a centralized layout component, so it's shared everywhere.
 
-![code sample adding Themes component in document head](https://user-images.githubusercontent.com/3088615/186810936-6b00e051-c3e7-4d7e-bb1b-988290a1a8c2.png)
+![code sample adding Themes component in document head](https://user-images.githubusercontent.com/3088615/187366957-fd3b3ef6-c3a8-4524-a898-49be189e1a73.png)
 
 ### Usage
 
