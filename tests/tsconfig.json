@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "module": "es6",
+    "target": "es6",
     "lib": ["es5", "dom"],
     "types": ["cypress", "cypress-localstorage-commands", "node"],
     "baseUrl": "."
