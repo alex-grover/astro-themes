@@ -39,6 +39,10 @@ Set a default theme (only applied if the browser doesn't specify a preference fo
 <Themes defaultTheme="dark" />
 ```
 
+#### Compatibility with Tailwind
+
+Tailwind expects `class="dark"` on the `html` element rather than `data-theme`. To ensure that `dark:` classes work correctly, you can configure your dark mode selector as described [here](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name).
+
 ## What does it do?
 
 - Provides ability to get and set the theme from any framework, or none at all
@@ -64,10 +68,8 @@ npm link astro-themes
 npm run example
 ```
 
-## Possible future enhancements
+## Feedback
 
 Ideas, bug reports, or questions are welcomed! Please don't hesitate to [open an issue](https://github.com/alex-grover/astro-themes/issues/new).
-
-- Allow customizing attribute name, or using a class (helpful for Tailwind compatibility)
 
 This component was inspired by the excellent [`next-themes`](https://github.com/pacocoursey/next-themes).
