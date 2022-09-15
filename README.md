@@ -30,7 +30,7 @@ document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })) // or p
 Get the current theme:
 
 ```ts
-document.documentElement.attributes.getNamedItem('data-theme').value // 'light' | 'dark'
+document.documentElement.attributes.getNamedItem('data-theme')?.value // 'light' | 'dark'
 ```
 
 Set a default theme (only applied if the browser doesn't specify a preference for dark mode):
@@ -47,7 +47,7 @@ Tailwind expects `class="dark"` on the `html` element rather than `data-theme`. 
 
 - Provides ability to get and set the theme from any framework, or none at all
   - Set theme by dispatching a custom browser event: `document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))`
-  - Get current theme: `document.documentElement.attributes.getNamedItem('data-theme').value`
+  - Get current theme: `document.documentElement.attributes.getNamedItem('data-theme')?.value`
 - Sets `data-theme` attribute on the `html` element, so you can implement dark mode in CSS
 - Sets `color-scheme` CSS attribute on the `html` element, so the browser renders built in elements appropriately
 - Reads user theme preference on page load
