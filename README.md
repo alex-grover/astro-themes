@@ -1,4 +1,4 @@
-# 🚀 astro-themes [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/alex-grover/astro-themes/ci/main)](https://github.com/alex-grover/astro-themes/actions?query=branch%3Amain) [![npm](https://img.shields.io/npm/v/astro-themes)](https://www.npmjs.com/package/astro-themes)
+# 🚀 astro-themes [![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/alex-grover/astro-themes/ci.yml?branch=main)](https://github.com/alex-grover/astro-themes/actions/workflows/ci.yml?query=branch%3Amain) [![npm](https://img.shields.io/npm/v/astro-themes)](https://www.npmjs.com/package/astro-themes)
 
 Easy dark mode for Astro websites. Add themes in 2 lines of code! Zero dependencies, supports SSR, and works with any
 framework or UI.
