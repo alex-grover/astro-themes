@@ -18,7 +18,8 @@ node_modules/
 .env
 .env.test
 
-# Astro build output
+# Astro output
+src/env.d.ts
 dist/
 
 # esbuild build output
