@@ -76,27 +76,13 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog",
-      "maxHeaderWidth": 50,
-      "maxLineWidth": 72
+      "path": "cz-conventional-changelog"
     }
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "header-max-length": [
-        2,
-        "always",
-        50
-      ],
-      "body-max-line-length": [
-        2,
-        "always",
-        72
-      ]
-    }
+    ]
   },
   "prettier": {
     "semi": false,
