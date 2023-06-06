@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/alex-grover/astro-themes/compare/v0.2.3...v0.2.4) (2023-06-06)
+
+
+### Bug Fixes
+
+* **deps:** release to update dependencies ([cc30d3b](https://github.com/alex-grover/astro-themes/commit/cc30d3bb881fdd11f3a6e922b82e939d1cde982f))
+
 ## [0.2.3](https://github.com/alex-grover/astro-themes/compare/v0.2.2...v0.2.3) (2022-08-26)
 
 
