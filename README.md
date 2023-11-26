@@ -42,6 +42,7 @@ Set a default theme (only applied if the browser doesn't specify a preference fo
 #### Compatibility with Tailwind
 
 Tailwind expects `class="dark"` on the `html` element rather than `data-theme`. To ensure that `dark:` classes work correctly, you can configure your dark mode selector as described [here](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name).
+
 ```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -49,6 +50,7 @@ module.exports = {
   // ...
 }
 ```
+
 ## What does it do?
 
 - Provides ability to get and set the theme from any framework, or none at all
