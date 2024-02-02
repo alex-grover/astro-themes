@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/alex-grover/astro-themes/compare/v0.2.4...v0.2.5) (2024-02-02)
+
+
+### Bug Fixes
+
+* rewrite theme after view transition ([d04ee26](https://github.com/alex-grover/astro-themes/commit/d04ee26cc9d98e74ffa4f56d06a9846970784161)), closes [#23](https://github.com/alex-grover/astro-themes/issues/23)
+
 ## [0.2.4](https://github.com/alex-grover/astro-themes/compare/v0.2.3...v0.2.4) (2023-06-06)
 
 
