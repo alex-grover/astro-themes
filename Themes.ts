@@ -39,7 +39,7 @@ function handleStorageChange(event: StorageEvent): void {
   writeTheme(resolveTheme(event.newValue as Theme))
 }
 
-function handlePreferenceChange(): void {
+function rewriteTheme(): void {
   writeTheme(resolveTheme())
 }
 
@@ -55,5 +55,6 @@ function handleThemeChange(event: CustomEvent<Theme | null>): void {
 
 document.addEventListener('set-theme', handleThemeChange)
 window.addEventListener('storage', handleStorageChange)
-prefersDark.addEventListener('change', handlePreferenceChange)
+prefersDark.addEventListener('change', rewriteTheme)
+document.addEventListener('astro:after-swap', rewriteTheme)
 writeTheme(resolveTheme())
