@@ -34,3 +34,6 @@ build/
 # Test output files
 tests/screenshots/
 tests/videos/
+/test-results/
+/playwright-report/
+/playwright/.cache/
