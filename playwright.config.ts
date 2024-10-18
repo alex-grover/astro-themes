@@ -14,7 +14,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'html' : 'list',
   use: {
     actionTimeout: 0,
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:4321',
     trace: 'on-first-retry',
   },
   projects: [
@@ -43,7 +43,7 @@ const config: PlaywrightTestConfig = {
   ],
   webServer: {
     command: 'npm run test:server',
-    port: 3000,
+    port: 4321,
   },
 }
 
