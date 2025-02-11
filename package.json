@@ -60,7 +60,7 @@
     "astro": "^4.16.6",
     "chokidar-cli": "^3.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.15.5",
+    "esbuild": "^0.25.0",
     "husky": "^7.0.0",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.0.3",
