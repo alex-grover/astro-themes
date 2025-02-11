@@ -56,7 +56,7 @@
     "@astrojs/check": "^0.9.4",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.0.3",
-    "@playwright/test": "^1.25.2",
+    "@playwright/test": "^1.50.1",
     "astro": "^4.16.6",
     "chokidar-cli": "^3.0.0",
     "cz-conventional-changelog": "^3.3.0",
