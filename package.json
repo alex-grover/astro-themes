@@ -1,6 +1,6 @@
 {
   "name": "astro-themes",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Easy dark mode for Astro websites",
   "type": "module",
   "exports": {
