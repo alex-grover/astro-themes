@@ -21,7 +21,7 @@ test.describe('Flash of Unstyled Content (FOUC)', () => {
 
     // wait for the text to be in the body
     await expect(
-      page.getByText('I am text that appears in the body.')
+      page.getByText('I am text that appears in the body.'),
     ).toBeVisible()
 
     // now we should be able to immediately get the html element ...
