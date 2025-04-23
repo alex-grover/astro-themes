@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import { transform } from 'esbuild'
 import ts from 'typescript'
 
-import tsconfig from './tsconfig.json' assert { type: 'json' }
+import tsconfig from './tsconfig.json' with { type: 'json' }
 
 console.log('Building...')
 

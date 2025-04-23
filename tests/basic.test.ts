@@ -5,7 +5,7 @@ test.describe('<Themes />', () => {
     await page.goto('/')
 
     await page.evaluate(() =>
-      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })),
     )
 
     const html = page.locator('html')
@@ -13,7 +13,7 @@ test.describe('<Themes />', () => {
     await expect(html).toHaveCSS('color-scheme', 'dark')
 
     await page.evaluate(() =>
-      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))
+      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' })),
     )
 
     await expect(html).toHaveAttribute('data-theme', 'light')
@@ -27,12 +27,12 @@ test.describe('<Themes />', () => {
     await expect(html).toHaveAttribute('data-theme', 'light')
 
     await page.evaluate(() =>
-      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })),
     )
 
     const theme = await page.evaluate(
       () =>
-        document.documentElement.attributes.getNamedItem('data-theme')?.value
+        document.documentElement.attributes.getNamedItem('data-theme')?.value,
     )
 
     await expect(theme).toBe('dark')
@@ -42,7 +42,7 @@ test.describe('<Themes />', () => {
     await page.goto('/')
 
     await page.evaluate(() =>
-      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))
+      document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })),
     )
 
     const html = page.locator('html')
@@ -80,8 +80,8 @@ test.describe('<Themes />', () => {
           key: 'theme',
           oldValue: null,
           newValue: 'dark',
-        })
-      )
+        }),
+      ),
     )
 
     await expect(html).toHaveAttribute('data-theme', 'dark')
