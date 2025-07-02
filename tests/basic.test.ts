@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('<Themes />', () => {
-  test('sets attribute and style on the html element', async ({ page }) => {
+  test('sets attributes and style on the html element', async ({ page }) => {
     await page.goto('/')
 
     await page.evaluate(() =>
@@ -10,6 +10,7 @@ test.describe('<Themes />', () => {
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', 'dark')
     await expect(html).toHaveCSS('color-scheme', 'dark')
 
     await page.evaluate(() =>
@@ -17,14 +18,16 @@ test.describe('<Themes />', () => {
     )
 
     await expect(html).toHaveAttribute('data-theme', 'light')
+    await expect(html).toHaveAttribute('data-theme-preference', 'light')
     await expect(html).toHaveCSS('color-scheme', 'light')
   })
 
-  test('allows users to get theme', async ({ page }) => {
+  test('allows users to get theme and preference', async ({ page }) => {
     await page.goto('/')
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'light')
+    await expect(html).toHaveAttribute('data-theme-preference', '')
 
     await page.evaluate(() =>
       document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })),
@@ -36,6 +39,15 @@ test.describe('<Themes />', () => {
     )
 
     await expect(theme).toBe('dark')
+
+    const preference = await page.evaluate(
+      () =>
+        document.documentElement.attributes.getNamedItem(
+          'data-theme-preference',
+        )?.value,
+    )
+
+    await expect(preference).toBe('dark')
   })
 
   test('persists on refresh', async ({ page }) => {
@@ -47,11 +59,13 @@ test.describe('<Themes />', () => {
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', 'dark')
     await expect(html).toHaveCSS('color-scheme', 'dark')
 
     await page.reload()
 
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', 'dark')
     await expect(html).toHaveCSS('color-scheme', 'dark')
   })
 
@@ -62,6 +76,7 @@ test.describe('<Themes />', () => {
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', '')
     await expect(html).toHaveCSS('color-scheme', 'dark')
   })
 
@@ -70,6 +85,7 @@ test.describe('<Themes />', () => {
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'light')
+    await expect(html).toHaveAttribute('data-theme-preference', '')
     await expect(html).toHaveCSS('color-scheme', 'light')
 
     // StorageEvents don't fire if you set localStorage from the same page, so
@@ -85,6 +101,7 @@ test.describe('<Themes />', () => {
     )
 
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', 'dark')
     await expect(html).toHaveCSS('color-scheme', 'dark')
   })
 
@@ -95,11 +112,13 @@ test.describe('<Themes />', () => {
 
     const html = page.locator('html')
     await expect(html).toHaveAttribute('data-theme', 'dark')
+    await expect(html).toHaveAttribute('data-theme-preference', '')
     await expect(html).toHaveCSS('color-scheme', 'dark')
 
     await page.emulateMedia({ colorScheme: 'light' })
 
     await expect(html).toHaveAttribute('data-theme', 'light')
+    await expect(html).toHaveAttribute('data-theme-preference', '')
     await expect(html).toHaveCSS('color-scheme', 'light')
   })
 })
