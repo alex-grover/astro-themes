@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.7](https://github.com/alex-grover/astro-themes/compare/v0.2.6...v0.2.7) (2025-07-02)
+
+
+### Features
+
+* add theme preference attribute ([f628b03](https://github.com/alex-grover/astro-themes/commit/f628b03bb90df651511285d8f444a4fdfd045eed)), closes [#41](https://github.com/alex-grover/astro-themes/issues/41)
+
+
+### Documentation
+
+* remove duplicate changelog entry ([d9cbae0](https://github.com/alex-grover/astro-themes/commit/d9cbae0a80c313ddf3916c912c5341820a4b4ee2))
+
 ## [0.2.6](https://github.com/alex-grover/astro-themes/compare/v0.2.5...v0.2.6) (2025-04-23)
 
 
