@@ -1,0 +1,62 @@
+---
+import Themes from 'astro-themes'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Themes Example</title>
+    <Themes />
+    <style>
+      html {
+        --background-color: white;
+        --text-color: black;
+
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      [data-theme='dark'] {
+        --background-color: black;
+        --text-color: white;
+      }
+    </style>
+    <script>
+      const select = document.querySelector('select')
+
+      const preference =
+        document.documentElement.attributes.getNamedItem(
+          'data-theme-preference',
+        )?.value ?? ''
+      select.value = preference
+
+      const observer = new MutationObserver(() => {
+        select.value = document.documentElement.attributes.getNamedItem(
+          'data-theme-preference',
+        )?.value
+      })
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme-preference'],
+      })
+    </script>
+  </head>
+  <body>
+    <h1>Astro Themes Example w/ Select</h1>
+
+    <select
+      onchange="document.dispatchEvent(new CustomEvent('set-theme', { detail: this.value }))"
+    >
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="">System</option>
+    </select>
+
+    <div>
+      <a href="/">Back to basic example</a>
+    </div>
+  </body>
+</html>

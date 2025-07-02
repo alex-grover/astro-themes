@@ -27,10 +27,11 @@ Set the theme:
 document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' })) // or pass `null` to clear the saved setting
 ```
 
-Get the current theme:
+Get the current resolved theme and theme preference:
 
 ```ts
 document.documentElement.attributes.getNamedItem('data-theme')?.value // 'light' | 'dark'
+document.documentElement.attributes.getNamedItem('data-theme-preference')?.value // 'light' | 'dark' | ''
 ```
 
 Set a default theme (only applied if the browser doesn't specify a preference for dark mode):
