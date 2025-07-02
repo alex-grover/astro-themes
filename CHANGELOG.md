@@ -7,13 +7,6 @@
 
 * **themes.astro:** change script to not be a module ([67702f2](https://github.com/alex-grover/astro-themes/commit/67702f2acfb3180a2588e54d08e31a6f3d211a8c))
 
-## [0.2.6](https://github.com/alex-grover/astro-themes/compare/v0.2.5...v0.2.6) (2025-04-23)
-
-
-### Bug Fixes
-
-* **themes.astro:** change script to not be a module ([67702f2](https://github.com/alex-grover/astro-themes/commit/67702f2acfb3180a2588e54d08e31a6f3d211a8c))
-
 ## [0.2.5](https://github.com/alex-grover/astro-themes/compare/v0.2.4...v0.2.5) (2024-02-02)
 
 
