@@ -20,6 +20,7 @@ node_modules/
 # Astro output
 src/env.d.ts
 dist/
+.astro/
 
 # esbuild build output
 build/
